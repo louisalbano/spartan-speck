@@ -9,14 +9,9 @@ module.exports = {
     }
 
     if (message.member.voiceChannel) {
-      const channel = message.member.voiceChannel;
-      channel.join().then(connection => {
-        // Yay, it worked!
-        console.log("Successfully connected.");
-      }).catch(e => {
-        // Oh no, it errored! Let's log it to console :)
-        console.error(e);
-      });
+      message.member.voiceChannel.join()
+        .then(connection => { console.log('Successfully connected.'); })
+        .catch(e => { console.error(e); });
     }
     else {
       message.reply('Get in a voice channel, nerd!')
