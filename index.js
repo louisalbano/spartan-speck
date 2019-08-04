@@ -43,7 +43,7 @@ client.on('message', message => {
     let reply = 'You didn\'t provide any arguments, ya dingus!'
 
     if (command.usage) {
-      reply += `\nThe proper usage would be: \`${prefix}${command.name} ${message.author}\``
+      reply += `\nThe proper usage would be: \`${prefix}${command.name} ${message.author.username}\``
     }
 
     return message.channel.send(reply);
